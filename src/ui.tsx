@@ -15,6 +15,7 @@ function Plugin() {
     myfirstfunc();
   }, []);
 
+  throw new Error('Testing stack trace')
   return <h1>hello</h1>;
 }
 
