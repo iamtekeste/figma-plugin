@@ -2,6 +2,7 @@
   "dependencies": {
     "@create-figma-plugin/ui": "^3.0.2",
     "@create-figma-plugin/utilities": "^3.0.2",
+    "@types/node": "^20.10.1",
     "preact": ">=10"
   },
   "devDependencies": {
@@ -11,8 +12,10 @@
     "typescript": ">=4"
   },
   "scripts": {
-    "build": "build-figma-plugin --typecheck --minify",
-    "watch": "build-figma-plugin --typecheck --watch"
+      "build": "build-figma-plugin --typecheck --minify",
+      "build:with-maps": "build-figma-plugin --typecheck --minify --esb-keep-names --esb-sourcemap=inline",
+      "build:show-config": "build-figma-plugin --show-config",
+      "watch": "build-figma-plugin --typecheck --watch --esb-sourcemap=inline"
   },
   "figma-plugin": {
     "editorType": [
@@ -22,5 +25,8 @@
     "name": "Ai Sticky",
     "main": "src/main.ts",
     "ui": "src/ui.tsx"
+  },
+  "engines": {
+    "node": ">=18.3"
   }
 }
